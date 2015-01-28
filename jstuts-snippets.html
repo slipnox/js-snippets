@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>testing gsk</title>
+	<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.2/TweenMax.min.js"></script> -->
+	<style>
+		body {
+			background: #000;
+		}
+		.box {
+			opacity:1;
+			width: 100px;
+			height: 100px;
+			left:50px;
+			top: 50px;
+			position: absolute;
+			background-color: #f60;
+			border-radius: 20px;
+			-webkit-transition: all .8s ease;
+			-moz-transition: all .8s ease;
+			-ms-transition: all .8s ease;
+			-o-transition: all .8s ease;
+			transition: all .8s ease;			
+		}
+		.normal {
+			background: #000;
+			color:#fff;
+		}
+		.changed {
+			background: #fff;
+			color:#000;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1" class="box"></div>
+	<div id="caja" class="box"></div>
+	<script>
+//		TweenLite.to( [target object], [duration in seconds], [destination values] );
+		
+//		Easing allows you to change the speed of your animation over time
+//		TweenLite.to(logo, 3, {left:"440px", ease:Bounce.easeOut});
+
+		// var person = new Object();
+
+		// person.firstName = 'Thomas';
+		// person.lastName = 'Anderson';
+		// person.getFullName = function() {
+		// 	return this.firstName +' '+ this.lastName;
+		// }
+
+		//OBJECT
+		var person = {
+			firstName: 'Thomas',
+			lastName: 'Anderson',
+			getFullName : function() {
+				return this.firstName +' '+ this.lastName;
+			}
+		};
+
+		//ARRAY
+		var animales = ['perro', 'gatos', 'paloma', 'cocodrilo'];
+		perro = animales[3];
+
+		window.onload = function() {
+			init();
+		}
+
+		function init() {
+			//var box = document.getElementById('box');
+			//console.log(person.getFullName());
+
+			//FOR LOOP
+			// len = animales.length;  
+			// for (i=0; i < len; i++) { 	
+			// 	ani = animales[i];
+			// 	console.log(ani);
+			// }
+
+			//WHILE LOOP
+			// while (animales.length > 0){
+			// 	ani = animales.pop();
+			// 	console.log(ani);
+			// }
+
+			//DO WHILE
+			// do {
+			// 	ani = animales.pop();
+			// 	console.log(ani);
+			// } whi le (animales.length > 0);
+
+			//AUTO EXECUTABLE FUNCTION
+			// (function(){
+			// 	conf = confirm('Go to goole?');
+
+			// 	if (conf) {
+			// 		location = 'http://www.google.com';
+			// 	} else {
+			// 		alert('You will stay here');
+			// 	}
+
+			// }());
+
+			//GET ELEMENTS
+			// eDiv = document.getElementsByTagName('div');
+			// eDiv = document.getElementsById('div');
+
+			function gEbId(eid) {
+				return eid = document.getElementById(eid);
+			};
+
+			var box = gEbId('box1');
+			var caja = gEbId('caja');
+		
+			function animation() {
+				setTimeout(animationOne, 1000);
+				setTimeout(animationTwo, 2000);
+				setTimeout(animationThree, 3000);
+			};
+
+			var animationOne = function() { 
+				caja.style.left = '300px';
+				//console.log(caja);
+			};
+
+			var animationTwo = function() {
+				caja.style.top = '300px';
+				caja.style.backgroundColor = '#ddd';
+			};
+
+			var animationThree = function() {
+				caja.style.left = '50px';
+				caja.style.backgroundColor = '#f60';
+
+				//For Loop with array
+				var arr = ['thomas', 'anderson','jason', 'neo', 'smith'];
+
+				for (var i = 0;  i < arr.length; i++ ) {
+					console.log('Hello '+ arr[i]);
+				};
+
+				//While Loop
+				var i = 0;
+				while (i <= 10 ) {
+					//console.log( i + ' * 2 = ' + i * 2 );
+					i++;
+				};
+ 			};
+
+			//FizzBuzz App
+			var FizzBuzz = (function(){ //Autoexec function
+			for (var i = 1; i <=30; i++) {
+			 	var output = i;
+
+			 	if (i % 3 == 0 && i % 5 == 0) {
+			 		output = 'FizzBuzz';
+			 	} else if (i % 3 == 0) {
+			 		output = 'Fizz';
+			 	} else if (i % 5 == 0) {
+			 		output = 'Buzz';
+			 	};
+
+			 	console.log(output);
+			 }
+
+ 			function product(x,y) {
+ 				 	return x * j;
+ 			}
+
+ 			for (var i = 1; i <= 10; i++) {
+			 	for (var j = 1; j <=10; j++){
+			 		console.log(i + ' x ' + j + ' = ' + product(i,j));
+			 	}
+			 	console.log('');
+			 };
+
+ 			})();
+
+			animation();
+
+		}
+	</script>
+</body>
+</html>
